@@ -1,0 +1,12 @@
+.card-icon{
+    animation: autorotate both ;
+    animation-timeline: view();
+}
+@keyframes autorotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
