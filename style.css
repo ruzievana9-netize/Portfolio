@@ -101,6 +101,7 @@ body {
 
 .hero-btn:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
 }
 
 .hero-image {
@@ -148,7 +149,6 @@ body {
     top: 0;
     left: 0;
     border-radius: 20px;
-
 }
 
 .box-2 .img2 {
@@ -159,15 +159,42 @@ body {
     border-radius: 20px;
 }
 
-
-.box-3 .img3  {
+.box-3 .img3 {
     width: 100px;
     height: 100px;
     top: 150px;
-    margin-left: 50px; 
-    transform: translateX(-50%);
     border-radius: 20px;
 }
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.box-1 .img1:hover,
+.box-2 .img2:hover,
+.box-3 .img3:hover {
+    animation: shake 0.4s ease-in-out;
+}
+
+
 
 /* Cards Section */
 .cards-section {
@@ -193,11 +220,41 @@ body {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-block;
+    transition: box-shadow 0.3s ease;
+    transform-origin: center;
+}
+
+/* Sakrash animatsiyasi */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.15);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .card:hover {
     box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+    animation: bounce 0.5s ease;
 }
+
+
 
 .card-icon {
     font-size: 3rem;
@@ -306,27 +363,60 @@ body {
 }
 
 .item-1 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ea66d8 0%, #764ba2 100%);
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center
 }
 
 .item-2 {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center
 }
 
 .item-3 {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #fe4f58 0%, #fe00dc 100%);
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center
 }
 
 .item-4 {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    background: linear-gradient(135deg, #3414e7 0%, #bd0817 100%);
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center
 }
 
 .item-5 {
     background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center
 }
 
 .item-6 {
-    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    background: linear-gradient(135deg, #30cfd0 0%, #f806d8de 100%);
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    transform-origin: center
+}
+
+.item-1:hover,
+.item-2:hover,
+.item-3:hover,
+.item-4:hover,
+.item-5:hover,
+.item-6:hover {
+    transform: scale(1.1);
 }
 
 .gallery-overlay1,
@@ -347,42 +437,53 @@ body {
     align-items: center;
     color: white;
     opacity: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
-
-.gallery:hover { transform: perspective(600px) rotateX(6deg) rotateY(-6deg) translateZ(0); }
-
 
 .gallery-item:hover .gallery-overlay1 {
     opacity: 1;
-    background-image:url(./4.jpg);
-    
+    background-image: url(./4.jpg);
+
 }
+
 .gallery-item:hover .gallery-overlay2 {
     opacity: 1;
-    background-image:url(./5.jpg);
-    
-}.gallery-item:hover .gallery-overlay3 {
-    opacity: 1;
-    background-image:url(./6.jpg);
-    
-}.gallery-item:hover .gallery-overlay4 {
-    opacity: 1;
-    background-image:url(./7.jpg);
-    
-}.gallery-item:hover .gallery-overlay5 {
-    opacity: 1;
-    background-image:url(./8.jpg);
-    
-}.gallery-item:hover .gallery-overlay6 {
-    opacity: 1;
-    background-image:url(./9.jpg);
-    
+    background-image: url(./5.jpg);
+
 }
+
+.gallery-item:hover .gallery-overlay3 {
+    opacity: 1;
+    background-image: url(./6.jpg);
+
+}
+
+.gallery-item:hover .gallery-overlay4 {
+    opacity: 1;
+    background-image: url(./7.jpg);
+
+}
+
+.gallery-item:hover .gallery-overlay5 {
+    opacity: 1;
+    background-image: url(./8.jpg);
+
+}
+
+.gallery-item:hover .gallery-overlay6 {
+    opacity: 1;
+    background-image: url(./9.jpg);
+
+}
+
 .gallery-overlay h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
+
 
 
 
@@ -436,15 +537,3 @@ body {
         grid-template-columns: 1fr;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
